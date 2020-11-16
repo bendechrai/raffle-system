@@ -8,12 +8,14 @@ exports.handler = async function (event, context, callback) {
         expand: ['data.product'],
     });
 
-    const products = prices.data.map(price => {
-        let product = price.product
-        product.price = price
-        delete product.price.product
-        return product
-    })
+    const products = prices.data
+        .filter(price => price.product.active)
+        .map(price => {
+            let product = price.product
+            product.price = price
+            delete product.price.product
+            return product
+        })
 
     callback(null, {
         statusCode: 200,
