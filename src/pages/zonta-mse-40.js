@@ -85,7 +85,7 @@ const ZontaMSE40 = () => {
                         <>
                             <div className="raffleProduct">
                                 <h2>{product.name}</h2>
-                                <img src={`/images/${product.metadata.image}`} />
+                                <img src={product.images[0]} />
                                 <button onClick={() => buyTickets(product.price.id)}>Buy {product.metadata.ticket_count} raffle tickets for ${(product.price.unit_amount / 100).toFixed(2)}</button>
                                 <p>{product.description}</p>
                             </div>
@@ -96,7 +96,7 @@ const ZontaMSE40 = () => {
                     <>
                         <div className="raffleProduct customRaffleProduct">
                             <h2>{customProduct.name}</h2>
-                            <img src={`/images/${customProduct.metadata.image}`} />
+                            <img src={customProduct.images[0]} />
                             <button onClick={buyCustomTicket}>Buy {customTicketCount} raffle tickets for ${(customProduct.price.unit_amount * customTicketCount / 100).toFixed(2)}</button>
                             <p>
                                 Buy <input onChange={ev => setCustomTicketCount(ev.target.value)} value={customTicketCount} /> tickets for ${(customProduct.price.unit_amount / 100).toFixed(2)} each.
