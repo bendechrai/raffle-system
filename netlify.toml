@@ -2,3 +2,6 @@
   command = "npm run develop"
   functions = "lambda"
   publish = "public"
+
+[context.prod]
+  command = "npm run build"
