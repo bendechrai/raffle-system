@@ -14,7 +14,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <div className="mainWrap">
-        <main>{children}</main>
+        <main><div className="mainInner">
+          {children}
+        </div></main>
         <footer>
           <p>Rafflist is a Lunar Productions creation</p>
           <p>© {new Date().getFullYear()}</p>

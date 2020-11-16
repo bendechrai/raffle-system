@@ -6,10 +6,10 @@ import SEO from "../components/seo"
 import getStripe from "../utils/stripe"
 
 const metaTitle = `Zonta Club of Melbourne's South East`
-const title = `Zonta Club of Melbourne's South East 40th Birthday and 16 Day of Acticism Raffle`
+const title = `Zonta Club of Melbourne's South East 40th Birthday and 16 Day of Activism Raffle`
 const description = `Raising funds for Zonta initiatives that support local women and their children impacted by family violence.`
 
-const ZontaMSE40th = () => {
+const ZontaMSE40 = () => {
 
     const [products, setProducts] = useState(null)
     const [customProduct, setCustomProduct] = useState(null)
@@ -85,8 +85,8 @@ const ZontaMSE40th = () => {
                         <>
                             <div className="raffleProduct">
                                 <h2>{product.name}</h2>
-                                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.0S2EDDLG07gcKzxUP6x-zwHaIe%26pid%3DApi&f=1" />
-                                <button onClick={() => buyTickets(product.price.id)}>Buy {product.metadata.ticket_count} raffle tickets for ${product.price.unit_amount / 100}</button>
+                                <img src={`/images/${product.metadata.image}`} />
+                                <button onClick={() => buyTickets(product.price.id)}>Buy {product.metadata.ticket_count} raffle tickets for ${(product.price.unit_amount / 100).toFixed(2)}</button>
                                 <p>{product.description}</p>
                             </div>
                         </>
@@ -96,11 +96,10 @@ const ZontaMSE40th = () => {
                     <>
                         <div className="raffleProduct customRaffleProduct">
                             <h2>{customProduct.name}</h2>
-                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.0S2EDDLG07gcKzxUP6x-zwHaIe%26pid%3DApi&f=1" />
-                            <button onClick={buyCustomTicket}>Buy {customTicketCount} raffle tickets for ${customProduct.price.unit_amount * customTicketCount / 100}</button>
+                            <img src={`/images/${customProduct.metadata.image}`} />
+                            <button onClick={buyCustomTicket}>Buy {customTicketCount} raffle tickets for ${(customProduct.price.unit_amount * customTicketCount / 100).toFixed(2)}</button>
                             <p>
-                                Buy <input onChange={ev => setCustomTicketCount(ev.target.value)} value={customTicketCount} /> or
-                                more raffle tickets for ${customProduct.price.unit_amount / 100} each.
+                                Buy <input onChange={ev => setCustomTicketCount(ev.target.value)} value={customTicketCount} /> tickets for ${(customProduct.price.unit_amount / 100).toFixed(2)} each.
                             </p>
                             {customProductError &&
                                 <p className="error">{customProductError}</p>
@@ -114,4 +113,4 @@ const ZontaMSE40th = () => {
     )
 }
 
-export default ZontaMSE40th
+export default ZontaMSE40

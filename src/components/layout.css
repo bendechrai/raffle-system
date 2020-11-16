@@ -11,6 +11,10 @@ main {
     background-color: #fff;
     padding: 1rem
 }
+div.mainInner {
+    margin: 0 auto;
+    max-width: 1000px;
+}
 footer {
     color: #ccc;
     margin: 2rem 2rem 0;
@@ -26,6 +30,11 @@ div.raffleProducts {
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+div.raffleProduct {
+    display: flex;
+    flex-direction: column;
 }
 
 div.raffleProduct img {

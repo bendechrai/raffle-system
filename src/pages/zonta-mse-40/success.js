@@ -4,10 +4,10 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 
 const metaTitle = `Zonta Club of Melbourne's South East`
-const title = `Zonta Club of Melbourne's South East 40th Birthday and 16 Day of Acticism Raffle`
+const title = `Zonta Club of Melbourne's South East 40th Birthday and 16 Day of Activism Raffle`
 const description = `Raising funds for Zonta initiatives that support local women and their children impacted by family violence.`
 
-const ZontaMSE40thSuccess = () => {
+const ZontaMSE40Success = () => {
 
     return (
         <Layout>
@@ -19,4 +19,4 @@ const ZontaMSE40thSuccess = () => {
     )
 }
 
-export default ZontaMSE40thSuccess
+export default ZontaMSE40Success
