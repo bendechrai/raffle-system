@@ -1,0 +1,47 @@
+body {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+div.mainWrap {
+    min-height: 100vh;
+    background-color: #555;
+}
+main {
+    background-color: #fff;
+    padding: 1rem
+}
+footer {
+    color: #ccc;
+    margin: 2rem 2rem 0;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+div.raffleProducts h2 {
+    font-size: 1.1rem;
+}
+
+div.raffleProducts {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+div.raffleProduct img {
+    width: 100%;
+    height: auto;
+}
+
+div.raffleProduct button {
+    width:100%;
+    background-color: steelblue;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+div.customRaffleProduct input {
+    width: 4ch;
+}
