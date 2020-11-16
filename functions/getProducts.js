@@ -1,6 +1,8 @@
 exports.handler = async function (event, context, callback) {
 
-    const stripe = require('stripe')(process.env.STRIPE_SK);
+    if (process.env.NODE_ENV !== 'production') require('dotenv').config()
+
+    const stripe = require('stripe')(process.env.STRIPE_SK)
 
     const prices = await stripe.prices.list({
         expand: ['data.product'],
@@ -10,7 +12,7 @@ exports.handler = async function (event, context, callback) {
         let product = price.product
         product.price = price
         delete product.price.product
-        return product        
+        return product
     })
 
     callback(null, {

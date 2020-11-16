@@ -1,5 +1,0 @@
-[build]
-  command = "npm run develop"
-  functions = "lambda"
-  publish = "public"
-  environment = { STRIPE_SK = "sk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" }
