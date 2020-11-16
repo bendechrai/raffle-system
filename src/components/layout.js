@@ -18,8 +18,7 @@ const Layout = ({ children }) => {
           {children}
         </div></main>
         <footer>
-          <p>Rafflist is a Lunar Productions creation</p>
-          <p>© {new Date().getFullYear()}</p>
+          <p>Rafflist is a Lunar Productions creation ❤️ © {new Date().getFullYear()}, Lunar Productions Pty Ltd.</p>
         </footer>
       </div>
     </>

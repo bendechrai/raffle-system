@@ -78,16 +78,21 @@ const ZontaMSE40 = () => {
         <Layout>
             <SEO title={metaTitle} description={description} />
             <h1>{title}</h1>
-            <p>{description}</p>
+            <p className="lead">{description}</p>
+            <p>Pick the number of tickets you would like to purchase. If you want more than 11 tickets, simply enter the quantity desired in the text field below.</p>
+            <p>You will be taken to a payment page, and must provide a valid email address, which is the only way you can receive your payment confirmation, and more importantly any notification of your ticket being drawn.</p>
             <div className="raffleProducts">
+                {!products && !customProduct && <>
+                Loading...
+                </>}
                 {products && products.map(product => {
                     return (
                         <>
                             <div className="raffleProduct">
                                 <h2>{product.name}</h2>
-                                <img src={product.images[0]} />
+                                <img src={product.images[0]} alt={product.name} />
                                 <button onClick={() => buyTickets(product.price.id)}>Buy {product.metadata.ticket_count} raffle tickets for ${(product.price.unit_amount / 100).toFixed(2)}</button>
-                                <p>{product.description}</p>
+                                <p className="description">{product.description}</p>
                             </div>
                         </>
                     )
@@ -96,15 +101,15 @@ const ZontaMSE40 = () => {
                     <>
                         <div className="raffleProduct customRaffleProduct">
                             <h2>{customProduct.name}</h2>
-                            <img src={customProduct.images[0]} />
+                            <img src={customProduct.images[0]} alt={customProduct.name} />
                             <button onClick={buyCustomTicket}>Buy {customTicketCount} raffle tickets for ${(customProduct.price.unit_amount * customTicketCount / 100).toFixed(2)}</button>
-                            <p>
-                                Buy <input onChange={ev => setCustomTicketCount(ev.target.value)} value={customTicketCount} /> tickets for ${(customProduct.price.unit_amount / 100).toFixed(2)} each.
+                            <p className="description">
+                                Buy <input onChange={ev => setCustomTicketCount(ev.target.value)} value={customTicketCount} /> tickets for ${(customProduct.price.unit_amount / 100).toFixed(2)} each
                             </p>
                             {customProductError &&
                                 <p className="error">{customProductError}</p>
                             }
-                            <p>{customProduct.description}</p>
+                            <p className="description">{customProduct.description}</p>
                         </div>
                     </>
                 }</div>

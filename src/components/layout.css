@@ -1,11 +1,12 @@
 body {
+    font-family: sans-serif;
     font-size: 1.2rem;
     margin: 0;
 }
 
 div.mainWrap {
     min-height: 100vh;
-    background-color: #555;
+    background-color: #222;
 }
 main {
     background-color: #fff;
@@ -14,12 +15,19 @@ main {
 div.mainInner {
     margin: 0 auto;
     max-width: 1000px;
+    min-height: 70vh;
 }
 footer {
     color: #ccc;
     margin: 2rem 2rem 0;
     font-size: 0.9rem;
     text-align: center;
+}
+
+p.lead {
+    font-size: 1.2em;
+    padding: 0 1em;
+    border-left: 3px solid #555;
 }
 
 div.raffleProducts h2 {
@@ -44,7 +52,7 @@ div.raffleProduct img {
 
 div.raffleProduct button {
     width:100%;
-    background-color: steelblue;
+    background-color: #4682b4;
     border: none;
     padding: 0.5rem 1rem;
     color: #fff;
@@ -53,4 +61,24 @@ div.raffleProduct button {
 
 div.customRaffleProduct input {
     width: 4ch;
+    background-color: #ffc;
+    border: 1px solid #999;
+    font-size: 1em;
+    text-align: center;
+}
+
+div.raffleProduct .description {
+    text-align: center;
+    font-size: 0.8em;
+}
+
+div.raffleProduct button {
+    cursor: pointer;
+    border: 1px solid #777;
+    transition: box-shadow 0.2s;
+}
+div.raffleProduct button:hover {
+    box-shadow: 3px 3px 3px #999;
+    border: 1px solid #000;
+    background-color: #2c6696;
 }
