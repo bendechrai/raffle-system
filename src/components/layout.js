@@ -16,7 +16,8 @@ const Layout = ({ children }) => {
       <div className="mainWrap">
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()} Lunar Productions Pty Ltd
+          <p>Rafflist is a Lunar Productions creation</p>
+          <p>© {new Date().getFullYear()}</p>
         </footer>
       </div>
     </>

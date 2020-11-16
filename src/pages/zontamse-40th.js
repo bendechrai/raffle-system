@@ -17,7 +17,7 @@ const ZontaMSE40th = () => {
     const [customProductError, setCustomProductError] = useState(null)
 
     useEffect(() => {
-        fetch(`${process.env.NETLIFY_API}/getProducts`)
+        fetch(`${process.env.GATSBY_NETLIFY_API}/getProducts`)
             .then(res => res.json())
             .then(json => {
                 let regularProducts = []
@@ -50,7 +50,7 @@ const ZontaMSE40th = () => {
 
     const buyTickets = (priceId, qty = 1) => {
 
-        fetch(`${process.env.NETLIFY_API}/buyTickets`, {
+        fetch(`${process.env.GATSBY_NETLIFY_API}/buyTickets`, {
             method: 'post',
             headers: {
                 "Content-Type": "application/json"
