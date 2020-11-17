@@ -4,6 +4,13 @@ body {
     margin: 0;
 }
 
+header {
+    background-color: #4682b4;
+    padding: 1px 0 4px;
+}
+header .gatsby-image-wrapper {
+    max-width: 60px;
+}
 div.mainWrap {
     min-height: 100vh;
     background-color: #222;
@@ -38,6 +45,26 @@ p.lead {
     border-left: 3px solid #555;
 }
 
+div.raffles {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+div.raffles a {
+    color: inherit;
+    text-decoration: none;
+}
+div.raffle {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0rem 1rem;
+}
+div.raffle .metadata {
+    display: flex;
+    gap: 1rem;
+    font-size: .9rem;
+}
+
 div.raffleProducts h2 {
     font-size: 1.1rem;
 }
@@ -45,7 +72,7 @@ div.raffleProducts h2 {
 div.raffleProducts {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 div.raffleProduct {

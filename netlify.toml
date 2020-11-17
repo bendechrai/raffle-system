@@ -5,3 +5,7 @@
 
 [context.prod]
   command = "npm run build"
+
+
+[context.demo]
+  command = "npm run build"
