@@ -13,16 +13,26 @@ const IndexPage = () => (
     <div className="raffles">
       <Link to="/zonta-mse-40">
         <div className="raffle">
-          <h3>Zonta Club of Melbourne's South East 40th Birthday and 16 Day of Activism Raffle</h3>
-          <p>Raising funds for Zonta initiatives that support local women and their children impacted by family violence.</p>
+          <h3>Zonta Club of Melbourne's South East 40th Birthday Raffle</h3>
+          <p>
+            Raising funds for Zonta initiatives that support local women and
+            their children impacted by family violence.
+          </p>
           <div class="metadata">
-            <p><strong>Starts:</strong> 25th Nov 2020</p>
-            <p><strong>Closes:</strong> 10th Dec 2020</p>
+            <p>
+              <strong>Starts:</strong> 9am AEST on 5th April, 2021
+            </p>
+            <p>
+              <strong>Closes:</strong> 3pm AEST on 13th June, 2021
+            </p>
           </div>
         </div>
       </Link>
     </div>
-    <p>For more information, or to start selling tickets yourself, <a href="https://bendechrai.com/contact">contact Ben Dechrai</a>.</p>
+    <p>
+      For more information, or to start selling tickets yourself,{" "}
+      <a href="https://bendechrai.com/contact">contact Ben Dechrai</a>.
+    </p>
   </Layout>
 )
 
