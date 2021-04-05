@@ -18,7 +18,9 @@ const ZontaMSE40Success = () => {
         shortly receive an email with your purchase receipt.
       </p>
       <p>
-        Keep this email safe! It is your only proof of entry into the raffle.
+        <strong>
+          Keep this email safe! It is your only proof of entry into the raffle.
+        </strong>
       </p>
       <p>
         The draw will take place shortly after ticket sales close at 3pm AEST on
