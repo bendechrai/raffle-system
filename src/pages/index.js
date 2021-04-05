@@ -15,8 +15,8 @@ const IndexPage = () => (
         <div className="raffle">
           <h3>Zonta Club of Melbourne's South East 40th Birthday Raffle</h3>
           <p>
-            Raising funds for Zonta initiatives that support local women and
-            their children impacted by family violence.
+            Proceeds from the raffle will support community-based Mental Health
+            First Aid training.
           </p>
           <div class="metadata">
             <p>

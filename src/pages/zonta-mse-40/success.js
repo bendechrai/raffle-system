@@ -5,7 +5,7 @@ import SEO from "../../components/seo"
 
 const metaTitle = `Zonta Club of Melbourne's South East`
 const title = `Zonta Club of Melbourne's South East 40th Birthday Raffle`
-const description = `Raising funds for Zonta initiatives that support local women and their children impacted by family violence.`
+const description = `Proceeds from the raffle will support community-based Mental Health First Aid training.`
 
 const ZontaMSE40Success = () => {
   return (
