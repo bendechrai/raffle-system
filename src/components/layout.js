@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import "./layout.css"
+import { Link } from "gatsby"
 
 const Layout = ({ children }) => {
   return (
@@ -20,11 +21,13 @@ const Layout = ({ children }) => {
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  <img
-                    className="h-8"
-                    src="/images/rafflist.svg"
-                    alt="Rafflist"
-                  />
+                  <Link to="/">
+                    <img
+                      className="h-8"
+                      src="/images/rafflist.svg"
+                      alt="Rafflist"
+                    />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -32,7 +35,7 @@ const Layout = ({ children }) => {
         </nav>
 
         <main className="bg-white pb-20">
-          <div className="max-w-7xl mx-auto py-0 sm:py-6 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto py-0 sm:py-6 xl:py-12 sm:px-6 lg:px-8">
             {children}
           </div>
         </main>
