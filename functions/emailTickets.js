@@ -22,7 +22,7 @@ exports.handler = async function (event, context, callback) {
 
       const emailAddress = customer.email
       const emailText = `
-        <p>Thanks for buying a ${items[0]} through Rafflist!</p>
+        <p>Thanks for buying a ${items[0]}!</p>
         <p>
             <strong>If you intend to attend the raffle in person, you must have this email available for
             inspection in order to collect any prizes.</strong> These can be in the form of a printout
@@ -74,7 +74,7 @@ exports.handler = async function (event, context, callback) {
             <li>Z Multicoloured Necklace ($15)</li>
             <li>Small Pamper Pack - Lavender ($10)</li>
         </ul>
-        <p>Good luck from everyone at Rafflist, and thanks for supporting Zonta Club of Melbourne's South East!</p>
+        <p>Good luck, and thanks for supporting Zonta Club of Melbourne's South East!</p>
       `
 
       const mailgun = require("mailgun-js")
@@ -84,7 +84,7 @@ exports.handler = async function (event, context, callback) {
       })
 
       const data = {
-        from: "Rafflist <no-reply@mail.raffl.ist>",
+        from: "Zonta Club of Melbourne's South East <no-reply@mail.raffl.ist>",
         to: emailAddress,
         subject: "Your Raffle Tickets for Zonta Club of Melbourne's South East",
         html: emailText,
