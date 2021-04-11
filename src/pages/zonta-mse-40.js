@@ -216,8 +216,8 @@ const ZontaMSE40 = () => {
   const [customProductError, setCustomProductError] = useState(null)
 
   useEffect(() => {
-    const starts = new Date("2021-04-03 09:00")
-    const ends = new Date("2021-06-20 15:00")
+    const starts = new Date("2021/04/03 09:00")
+    const ends = new Date("2021/06/20 15:00")
     const now = new Date()
     const startsIn = starts.getTime() - now.getTime()
     const endsIn = ends.getTime() - now.getTime()
@@ -342,8 +342,12 @@ const ZontaMSE40 = () => {
           </div>
         </div>
 
-        <div className="p-10 text-indigo-200">
-          <h2 className="text-xl">Terms and Conditions</h2>
+        <div className="p-10 text-gray-200">
+          <h2 className="text-2xl font-bold">Terms and Conditions</h2>
+          <p className="my-4 font-bold">
+            You must be 18 years or over, and a resident of the state of
+            Victoria in Australia to be eligible to purchase a ticket.
+          </p>
           <p className="my-4">
             This raffle is being conducted by Lunar Productions on behalf and by
             request of Zonta Club of Melbourne's South East. Zonta Club of
@@ -354,14 +358,10 @@ const ZontaMSE40 = () => {
           <p className="my-4">
             Tickets for this raffle will be available from 9am on 5th April,
             2021, and will cease to be available at 3pm on 20th June, 2021 or
-            when sold out. The total prize pool is valued at $XXX, and there are
-            a maximum of $XXX*6 worth of tickets available. The raffle and
+            when sold out. The total prize pool is valued at $954.50, and there
+            are a maximum of $5727.00 worth of tickets available. The raffle and
             associated activities will be conducted under the laws of Victoria,
             Australia.
-          </p>
-          <p className="my-4">
-            You must be 18 years or over, and a resident of the state of
-            Victoria in Australia to be eligible to purchase a ticket.
           </p>
           <p className="my-4">
             We are required by law to collect ticket buyers’ contact details in
@@ -385,11 +385,11 @@ const ZontaMSE40 = () => {
             tickets, and is included here for convenience:
           </p>
           <ul className="my-4 ml-4">
-            <li>
+            <li className="pb-4">
               <strong>Raffle Beneficiary:</strong> Zonta Club of Melbourne's
               South East
             </li>
-            <li>
+            <li className="pb-4">
               <strong>Ticket Price:</strong>{" "}
               {products &&
                 products
@@ -409,7 +409,7 @@ const ZontaMSE40 = () => {
                 ).toFixed(2)} each`}
               .
             </li>
-            <li>
+            <li className="pb-4">
               <strong>Prize List:</strong> (with approximate values in
               descending order)
               <ul className="list-disc ml-4 pl-4">
@@ -455,12 +455,12 @@ const ZontaMSE40 = () => {
                 <li>Small Pamper Pack - Lavender ($10)</li>
               </ul>
             </li>
-            <li>
+            <li className="pb-4">
               <strong>Time and Location of Draw:</strong> shortly after 3pm on
               the 20th June, 2021 at the Frankston International Motel, 383-389
               Nepean Highway, Frankston, Victoria 3199.
             </li>
-            <li>
+            <li className="pb-4">
               <strong>Winner Notification and Publication Method:</strong>{" "}
               winners will be notified at the time of draw or by email if not
               available to collect the prize on the day. A complete list of
