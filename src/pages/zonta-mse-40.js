@@ -290,97 +290,100 @@ const ZontaMSE40 = () => {
   return (
     <Layout>
       <SEO title={metaTitle} description={description} />
-
-      <div className="shadow-lg overflow-hidden sm:rounded-lg">
-        <div className="bg-primary px-4 py-5 sm:px-6">
-          <div className="flex items-center justify-center flex-wrap gap-x-8 gap-y-4">
-            <div className="mt-2 flex-shrink-0 sm:mt-0">
-              <img
-                className="h-20 shadow-lg"
-                src="/images/zonta-mse-40/logo.png"
-                alt="Zonta Club of Melbourne's South East"
-              />
-            </div>
-            <div className="orde-2 m:order-1">
-              <h3 className="text-lg leading-6 text-white font-bold text-center">
-                {title}
-              </h3>
-              <p className="mt-1 text-sm text-white text-center">
-                {description}
-              </p>
+      <div className="bg-gray-600 rounded-lg">
+        <div className="bg-white shadow-md overflow-hidden sm:rounded-lg">
+          <div className="bg-primary px-4 py-5 sm:px-6">
+            <div className="flex items-center justify-center flex-wrap gap-x-8 gap-y-4">
+              <div className="mt-2 flex-shrink-0 sm:mt-0">
+                <img
+                  className="h-20 shadow-lg"
+                  src="/images/zonta-mse-40/logo.png"
+                  alt="Zonta Club of Melbourne's South East"
+                />
+              </div>
+              <div className="orde-2 m:order-1">
+                <h3 className="text-lg leading-6 text-white font-bold text-center">
+                  {title}
+                </h3>
+                <p className="mt-1 text-sm text-white text-center">
+                  {description}
+                </p>
+              </div>
             </div>
           </div>
+          <div className="border-t border-gray-200">
+            <Banner />
+
+            {!isLoaded && (
+              <Alert
+                title="Loading Tickets..."
+                message="This should only take a few seconds"
+              />
+            )}
+            {isLoaded && !isStarted && (
+              <Alert
+                title="The raffle hasn't started yet"
+                message="Please try later"
+              />
+            )}
+            {isLoaded && isEnded && <Alert title="The raffle has ended" />}
+
+            {isLoaded && isStarted && !isEnded && products && (
+              <Tickets
+                products={products}
+                customProduct={customProduct}
+                customTicketCount={customTicketCount}
+                setCustomTicketCount={setCustomTicketCount}
+                customProductError={customProductError}
+                buyTickets={buyTickets}
+                buyCustomTicket={buyCustomTicket}
+              />
+            )}
+          </div>
         </div>
-        <div className="border-t border-gray-200">
-          <Banner />
 
-          {!isLoaded && (
-            <Alert
-              title="Loading Tickets..."
-              message="This should only take a few seconds"
-            />
-          )}
-          {isLoaded && !isStarted && (
-            <Alert
-              title="The raffle hasn't started yet"
-              message="Please try later"
-            />
-          )}
-          {isLoaded && isEnded && <Alert title="The raffle has ended" />}
-
-          {isLoaded && isStarted && !isEnded && products && (
-            <Tickets
-              products={products}
-              customProduct={customProduct}
-              customTicketCount={customTicketCount}
-              setCustomTicketCount={setCustomTicketCount}
-              customProductError={customProductError}
-              buyTickets={buyTickets}
-              buyCustomTicket={buyCustomTicket}
-            />
-          )}
-        </div>
-      </div>
-
-      <div className="mt-20 pt-10 text-gray-400 border-t-4 border-gray-300">
-        <h2 className="text-xl">Terms and Conditions</h2>
-        <p className="my-4">
-          This raffle is being conducted by Lunar Productions on behalf and by
-          request of Zonta Club of Melbourne's South East. Zonta Club of
-          Melbourne's South East has obtained Declared Community Organisation
-          status from the Victorial Commission for Gambling and Liquor
-          Regulation (Organisational Number 61694).
-        </p>
-        <p className="my-4">
-          Tickets for this raffle will be available from 9am on 5th April, 2021,
-          and will cease to be available at 3pm on 20th June, 2021 or when sold
-          out. The total prize pool is valued at $XXX, and there are a maximum
-          of $XXX*6 worth of tickets available. The raffle and associated
-          activities will be conducted under the laws of Victoria, Australia.
-        </p>
-        <p className="my-4">
-          You must be 18 years or over, and a resident of the state of Victoria
-          in Australia to be eligible to purchase a ticket.
-        </p>
-        <p className="my-4">
-          We are required by law to collect ticket buyers’ contact details in
-          order to confirm winner's details. You agree that the email address
-          you provide during the payment process is considered your personal
-          identity, and that any person whomsoever that has access to email sent
-          to this address is to be considered as authorised to collect any
-          prize.
-        </p>
-        <p className="my-4">
-          We are required to provide you with printed tickets. The payment
-          confirmation email that you shall receive after purchase shall be this
-          printed ticket, and you must have this available for inspection in
-          order to collect any prizes. This can be in the form of a printout or
-          the ability to see the email on a mobile computing device in the email
-          client. A screenshot of the email will not be accepted.
-        </p>
-        <p className="my-4">
-          The following inforamtion is required to be included on any issued
-          tickets, and is included here for convenience:
+        <div className="p-10 text-indigo-200">
+          <h2 className="text-xl">Terms and Conditions</h2>
+          <p className="my-4">
+            This raffle is being conducted by Lunar Productions on behalf and by
+            request of Zonta Club of Melbourne's South East. Zonta Club of
+            Melbourne's South East has obtained Declared Community Organisation
+            status from the Victorial Commission for Gambling and Liquor
+            Regulation (Organisational Number 61694).
+          </p>
+          <p className="my-4">
+            Tickets for this raffle will be available from 9am on 5th April,
+            2021, and will cease to be available at 3pm on 20th June, 2021 or
+            when sold out. The total prize pool is valued at $XXX, and there are
+            a maximum of $XXX*6 worth of tickets available. The raffle and
+            associated activities will be conducted under the laws of Victoria,
+            Australia.
+          </p>
+          <p className="my-4">
+            You must be 18 years or over, and a resident of the state of
+            Victoria in Australia to be eligible to purchase a ticket.
+          </p>
+          <p className="my-4">
+            We are required by law to collect ticket buyers’ contact details in
+            order to confirm winner's details. You agree that the email address
+            you provide during the payment process is considered your personal
+            identity, and that any person whomsoever that has access to email
+            sent to this address is to be considered as authorised to collect
+            any prize.
+          </p>
+          <p className="my-4">
+            We are required to provide you with printed tickets. The payment
+            confirmation email that you shall receive after purchase shall be
+            this printed ticket, and you must have this available for inspection
+            in order to collect any prizes. This can be in the form of a
+            printout or the ability to see the email on a mobile computing
+            device in the email client. A screenshot of the email will not be
+            accepted.
+          </p>
+          <p className="my-4">
+            The following inforamtion is required to be included on any issued
+            tickets, and is included here for convenience:
+          </p>
           <ul className="my-4 ml-4">
             <li>
               <strong>Raffle Beneficiary:</strong> Zonta Club of Melbourne's
@@ -465,7 +468,7 @@ const ZontaMSE40 = () => {
               East website.
             </li>
           </ul>
-        </p>
+        </div>
       </div>
     </Layout>
   )
