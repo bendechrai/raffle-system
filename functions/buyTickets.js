@@ -26,8 +26,8 @@ exports.handler = async function (event, context, callback) {
   }
 
   const session = await stripe.checkout.sessions.create({
-    success_url: "https://raffl.ist/zonta-mse-40/success",
-    cancel_url: "https://raffl.ist/zonta-mse-40",
+    success_url: `${process.env.URL}/zonta-mse-40/success`,
+    cancel_url: `${process.env.URL}/zonta-mse-40`,
     payment_method_types: ["card"],
     line_items: [{ price: priceId, quantity: qty }],
     mode: "payment",
