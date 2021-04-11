@@ -9,7 +9,7 @@ const IndexPage = () => (
     <SEO title="Welcome" />
 
     <div>
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between bg-white rounded-lg">
         <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
           <span className="block">Welcome to Rafflist</span>
           <span className="block text-indigo-600">
@@ -19,7 +19,7 @@ const IndexPage = () => (
       </div>
     </div>
 
-    <h1 className="text-3xl py-6 font-bold text-gray-900">Current Raffles</h1>
+    <h1 className="text-3xl py-6 font-bold text-white">Current Raffles</h1>
 
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">

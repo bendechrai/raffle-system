@@ -173,6 +173,39 @@ const Tickets = ({
   )
 }
 
+const Alert = ({ title, message = "" }) => (
+  <>
+    <div className="mx-auto py-5">
+      <div className="">
+        <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full text-white bg-secondary">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+            />
+          </svg>
+        </div>
+        <div className="mt-3 text-center">
+          <h3 className="text-lg leading-6 font-medium text-gray-900">
+            {title}
+          </h3>
+          <div className="mt-2">
+            <p className="text-sm text-gray-500">{message}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </>
+)
+
 const ZontaMSE40 = () => {
   const [isLoaded, setIsLoaded] = useState(false)
   const [isStarted, setIsStarted] = useState(false)
@@ -183,8 +216,8 @@ const ZontaMSE40 = () => {
   const [customProductError, setCustomProductError] = useState(null)
 
   useEffect(() => {
-    const starts = new Date("2021-04-03 09:00")
-    const ends = new Date("2021-06-20 15:00")
+    const starts = new Date("2021/04/03 09:00")
+    const ends = new Date("2021/06/20 15:00")
     const now = new Date()
     const startsIn = starts.getTime() - now.getTime()
     const endsIn = ends.getTime() - now.getTime()
@@ -213,6 +246,8 @@ const ZontaMSE40 = () => {
           setProducts(regularProducts)
           setIsLoaded(true)
         })
+    } else {
+      setIsLoaded(true)
     }
   }, [])
 
@@ -255,94 +290,103 @@ const ZontaMSE40 = () => {
   return (
     <Layout>
       <SEO title={metaTitle} description={description} />
-
-      <div className="shadow-lg overflow-hidden sm:rounded-lg">
-        <div className="bg-primary px-4 py-5 sm:px-6">
-          <div className="flex items-center justify-center flex-wrap gap-x-8 gap-y-4">
-            <div className="mt-2 flex-shrink-0 sm:mt-0">
-              <img
-                className="h-20 shadow-lg"
-                src="/images/zonta-mse-40/logo.png"
-                alt="Zonta Club of Melbourne's South East"
-              />
-            </div>
-            <div className="orde-2 m:order-1">
-              <h3 className="text-lg leading-6 text-white font-bold text-center">
-                {title}
-              </h3>
-              <p className="mt-1 text-sm text-white text-center">
-                {description}
-              </p>
+      <div className="bg-gray-600 rounded-lg">
+        <div className="bg-white shadow-md overflow-hidden sm:rounded-lg">
+          <div className="bg-primary px-4 py-5 sm:px-6">
+            <div className="flex items-center justify-center flex-wrap gap-x-8 gap-y-4">
+              <div className="mt-2 flex-shrink-0 sm:mt-0">
+                <img
+                  className="h-20 shadow-lg"
+                  src="/images/zonta-mse-40/logo.png"
+                  alt="Zonta Club of Melbourne's South East"
+                />
+              </div>
+              <div className="orde-2 m:order-1">
+                <h3 className="text-lg leading-6 text-white font-bold text-center">
+                  {title}
+                </h3>
+                <p className="mt-1 text-sm text-white text-center">
+                  {description}
+                </p>
+              </div>
             </div>
           </div>
+          <div className="border-t border-gray-200">
+            <Banner />
+
+            {!isLoaded && (
+              <Alert
+                title="Loading Tickets..."
+                message="This should only take a few seconds"
+              />
+            )}
+            {isLoaded && !isStarted && (
+              <Alert
+                title="The raffle hasn't started yet"
+                message="Please try later"
+              />
+            )}
+            {isLoaded && isEnded && <Alert title="The raffle has ended" />}
+
+            {isLoaded && isStarted && !isEnded && products && (
+              <Tickets
+                products={products}
+                customProduct={customProduct}
+                customTicketCount={customTicketCount}
+                setCustomTicketCount={setCustomTicketCount}
+                customProductError={customProductError}
+                buyTickets={buyTickets}
+                buyCustomTicket={buyCustomTicket}
+              />
+            )}
+          </div>
         </div>
-        <div className="border-t border-gray-200">
-          <Banner />
 
-          {!isLoaded && <>Loading...</>}
-          {isLoaded && !isStarted && <>The raffle hasn't started yet.</>}
-          {isLoaded && isEnded && <>The raffle has ended.</>}
-
-          {isLoaded && isStarted && !isEnded && products && (
-            <Tickets
-              products={products}
-              customProduct={customProduct}
-              customTicketCount={customTicketCount}
-              setCustomTicketCount={setCustomTicketCount}
-              customProductError={customProductError}
-              buyTickets={buyTickets}
-              buyCustomTicket={buyCustomTicket}
-            />
-          )}
-        </div>
-      </div>
-
-      <div className="mt-20 pt-10 text-gray-400 border-t-4 border-gray-300">
-        <h2 className="text-xl">Terms and Conditions</h2>
-        <p className="my-4">
-          This raffle is being conducted by Lunar Productions on behalf and by
-          request of Zonta Club of Melbourne's South East. Zonta Club of
-          Melbourne's South East has obtained Declared Community Organisation
-          status from the Victorial Commission for Gambling and Liquor
-          Regulation (Organisational Number 61694).
-        </p>
-        <p className="my-4">
-          Tickets for this raffle will be available from 9am on 5th April, 2021,
-          and will cease to be available at 3pm on 20th June, 2021 or when sold
-          out. The total prize pool is valued at $XXX, and there are a maximum
-          of $XXX*6 worth of tickets available. The raffle and associated
-          activities will be conducted under the laws of Victoria, Australia.
-        </p>
-        <p className="my-4">
-          You must be 18 years or over, and a resident of the state of Victoria
-          in Australia to be eligible to purchase a ticket.
-        </p>
-        <p className="my-4">
-          We are required by law to collect ticket buyers’ contact details in
-          order to confirm winner's details. You agree that the email address
-          you provide during the payment process is considered your personal
-          identity, and that any person whomsoever that has access to email sent
-          to this address is to be considered as authorised to collect any
-          prize.
-        </p>
-        <p className="my-4">
-          We are required to provide you with printed tickets. The payment
-          confirmation email that you shall receive after purchase shall be this
-          printed ticket, and you must have this available for inspection in
-          order to collect any prizes. This can be in the form of a printout or
-          the ability to see the email on a mobile computing device in the email
-          client. A screenshot of the email will not be accepted.
-        </p>
-        <p className="my-4">
-          The following inforamtion is required to be included on any issued
-          tickets, and is included here for convenience:
-          <ul className="my-4 ml-4">
-            <li>
+        <div className="p-10 text-gray-200">
+          <h2 className="text-2xl font-bold">Terms and Conditions</h2>
+          <p className="my-4 font-bold">
+            You must be 18 years or over, and a resident of the state of
+            Victoria in Australia to be eligible to purchase a ticket.
+          </p>
+          <p className="my-4">
+            This raffle is being conducted by Zonta Club of Melbourne's South
+            East. Zonta Club of Melbourne's South East has obtained Declared
+            Community Organisation status from the Victorial Commission for
+            Gambling and Liquor Regulation (Organisational Number 61694).
+          </p>
+          <p className="my-4">
+            Tickets for this raffle will be available from 9am on 5th April,
+            2021, and will cease to be available at 3pm on 20th June, 2021 or
+            when sold out. The total prize pool is valued at $954.50, and there
+            are a maximum of $5727.00 worth of tickets available. The raffle and
+            associated activities will be conducted under the laws of Victoria,
+            Australia.
+          </p>
+          <p className="my-4">
+            We are required by law to collect ticket buyers’ contact details in
+            order to confirm winner's details. You agree that the email address
+            you provide during the payment process is considered your personal
+            identity, and that any person whomsoever that has access to email
+            sent to this address is to be considered as authorised to collect
+            any prize.
+          </p>
+          <p className="my-4">
+            We are required to provide you with printed tickets. Upon successful
+            payment, you will receive two emails, your raffle tickets and your
+            purchase receipt. If you intend to attend the raffle in person, you
+            must have the raffle tickets email available for inspection in order
+            to collect any prizes. This can be in the form of a printout or the
+            ability to see the email on a mobile computing device in the email
+            client. A screenshot of the email will not be accepted.
+          </p>
+          <ul className="my-4">
+            <li className="pb-4">
               <strong>Raffle Beneficiary:</strong> Zonta Club of Melbourne's
               South East
             </li>
-            <li>
+            <li className="pb-4">
               <strong>Ticket Price:</strong>{" "}
+              {!products && "ticket information currently not available"}
               {products &&
                 products
                   .map(product => {
@@ -361,7 +405,7 @@ const ZontaMSE40 = () => {
                 ).toFixed(2)} each`}
               .
             </li>
-            <li>
+            <li className="pb-4">
               <strong>Prize List:</strong> (with approximate values in
               descending order)
               <ul className="list-disc ml-4 pl-4">
@@ -407,12 +451,12 @@ const ZontaMSE40 = () => {
                 <li>Small Pamper Pack - Lavender ($10)</li>
               </ul>
             </li>
-            <li>
+            <li className="pb-4">
               <strong>Time and Location of Draw:</strong> shortly after 3pm on
               the 20th June, 2021 at the Frankston International Motel, 383-389
               Nepean Highway, Frankston, Victoria 3199.
             </li>
-            <li>
+            <li className="pb-4">
               <strong>Winner Notification and Publication Method:</strong>{" "}
               winners will be notified at the time of draw or by email if not
               available to collect the prize on the day. A complete list of
@@ -420,7 +464,7 @@ const ZontaMSE40 = () => {
               East website.
             </li>
           </ul>
-        </p>
+        </div>
       </div>
     </Layout>
   )
