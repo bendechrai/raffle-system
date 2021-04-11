@@ -349,11 +349,10 @@ const ZontaMSE40 = () => {
             Victoria in Australia to be eligible to purchase a ticket.
           </p>
           <p className="my-4">
-            This raffle is being conducted by Lunar Productions on behalf and by
-            request of Zonta Club of Melbourne's South East. Zonta Club of
-            Melbourne's South East has obtained Declared Community Organisation
-            status from the Victorial Commission for Gambling and Liquor
-            Regulation (Organisational Number 61694).
+            This raffle is being conducted by Zonta Club of Melbourne's South
+            East. Zonta Club of Melbourne's South East has obtained Declared
+            Community Organisation status from the Victorial Commission for
+            Gambling and Liquor Regulation (Organisational Number 61694).
           </p>
           <p className="my-4">
             Tickets for this raffle will be available from 9am on 5th April,
@@ -372,25 +371,22 @@ const ZontaMSE40 = () => {
             any prize.
           </p>
           <p className="my-4">
-            We are required to provide you with printed tickets. The payment
-            confirmation email that you shall receive after purchase shall be
-            this printed ticket, and you must have this available for inspection
-            in order to collect any prizes. This can be in the form of a
-            printout or the ability to see the email on a mobile computing
-            device in the email client. A screenshot of the email will not be
-            accepted.
+            We are required to provide you with printed tickets. Upon successful
+            payment, you will receive two emails, your raffle tickets and your
+            purchase receipt. If you intend to attend the raffle in person, you
+            must have the raffle tickets email available for inspection in order
+            to collect any prizes. This can be in the form of a printout or the
+            ability to see the email on a mobile computing device in the email
+            client. A screenshot of the email will not be accepted.
           </p>
-          <p className="my-4">
-            The following inforamtion is required to be included on any issued
-            tickets, and is included here for convenience:
-          </p>
-          <ul className="my-4 ml-4">
+          <ul className="my-4">
             <li className="pb-4">
               <strong>Raffle Beneficiary:</strong> Zonta Club of Melbourne's
               South East
             </li>
             <li className="pb-4">
               <strong>Ticket Price:</strong>{" "}
+              {!products && "ticket information currently not available"}
               {products &&
                 products
                   .map(product => {
