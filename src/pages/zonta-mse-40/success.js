@@ -86,7 +86,7 @@ const ZontaMSE40Success = () => {
                 raffle tickets email available for inspection in order to
                 collect any prizes.
               </strong>{" "}
-              These can be in the form of a printout or the ability to see the
+              This can be in the form of a printout or the ability to see the
               email on a mobile computing device in the email client. A
               screenshot of the email will not be accepted.
             </p>

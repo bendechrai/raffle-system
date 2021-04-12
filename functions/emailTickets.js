@@ -25,7 +25,7 @@ exports.handler = async function (event, context, callback) {
         <p>Thanks for buying a ${items[0]}!</p>
         <p>
             <strong>If you intend to attend the raffle in person, you must have this email available for
-            inspection in order to collect any prizes.</strong> These can be in the form of a printout
+            inspection in order to collect any prizes.</strong> This can be in the form of a printout
             or the ability to see the email on a mobile computing device in the email client.
             A screenshot of the email will not be accepted.
         </p>
