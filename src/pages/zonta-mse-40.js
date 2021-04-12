@@ -373,11 +373,7 @@ const ZontaMSE40 = () => {
           <p className="my-4">
             We are required to provide you with printed tickets. Upon successful
             payment, you will receive two emails, your raffle tickets and your
-            purchase receipt. If you intend to attend the raffle in person, you
-            must have the raffle tickets email available for inspection in order
-            to collect any prizes. This can be in the form of a printout or the
-            ability to see the email on a mobile computing device in the email
-            client. A screenshot of the email will not be accepted.
+            purchase receipt.
           </p>
           <ul className="my-4">
             <li className="pb-4">
