@@ -81,27 +81,18 @@ const ZontaMSE40Success = () => {
               </strong>
             </p>
             <p className="px-6 py-2">
-              <strong>
-                If you intend to attend the raffle in person, you must have the
-                raffle tickets email available for inspection in order to
-                collect any prizes.
-              </strong>{" "}
-              This can be in the form of a printout or the ability to see the
-              email on a mobile computing device in the email client. A
-              screenshot of the email will not be accepted.
-            </p>
-            <p className="px-6 py-2">
               The draw will take place shortly after ticket sales close at 3pm
               AEST on 20th June, 2021. Prizes will be picked in order of value,
               highest first, and winners who are not present during the draw
               will be contacted by email.
             </p>
             <p className="px-6 py-2">
-              If you receive a winning notification email, it is important that
-              you reply and organise collection of your prize. A failure to
-              respond within two weeks might result in your forfeiting the
-              prize, and it being offered to the next person by random draw from
-              the remaining tickets.
+              Winners will be notified by email and must make arrangements to
+              pick up their prize within two weeks. It is important that you
+              reply to that notification email and organise collection of your
+              prize. A failure to respond within two weeks might result in your
+              forfeiting the prize, and it being offered to the next person by
+              random draw from the remaining tickets.
             </p>
           </div>
         </div>

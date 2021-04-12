@@ -23,18 +23,26 @@ exports.handler = async function (event, context, callback) {
       const emailAddress = customer.email
       const emailText = `
         <p>Thanks for buying a ${items[0]}!</p>
-        <p>
-            <strong>If you intend to attend the raffle in person, you must have this email available for
-            inspection in order to collect any prizes.</strong> This can be in the form of a printout
-            or the ability to see the email on a mobile computing device in the email client.
-            A screenshot of the email will not be accepted.
-        </p>
-        <p><strong>Your email address</strong>: ${emailAddress}</p>
+        <p>If you're selected as a winner, you will be notified by email.</p>
         <p><strong>You purchased</strong>: ${items[0]}</p>
+        <p><strong>Your email address</strong>: ${emailAddress}</p>
         <p><strong>Raffle Beneficiary</strong>: Zonta Club of Melbourne's South East</p>
-        <p><strong>Ticket Price</strong>: 3 raffle tickets for $6.00, 6 raffle tickets for $10.00, 10 raffle tickets for $15.00, 11 or more raffle tickets for $1.50 each.</p>
-        <p><strong>Time and Location of Draw</strong>: shortly after 3pm on the 20th June, 2021 at the Frankston International Motel, 383-389 Nepean Highway, Frankston, Victoria 3199.</p>
-        <p><strong>Winner Notification and Publication Method</strong>: winners will be notified at the time of draw or by email if not available to collect the prize on the day. A complete list of winners will be published to the Zonta Club of Melbourne's South East website.</p>
+        <p>
+            <strong>Ticket Price</strong>: 3 raffle tickets for $6.00, 6 raffle tickets for $10.00,
+            10 raffle tickets for $15.00, 11 or more raffle tickets for $1.50 each.
+        </p>
+        <p>
+            <strong>Time and Location of Draw</strong>: shortly after 3pm on the 20th June, 2021
+            at the Frankston International Motel, 383-389 Nepean Highway, Frankston, Victoria 3199.
+        </p>
+        <p>
+            <strong>Winner Notification and Publication Method</strong>: winners will be notified by
+            email and must make arrangements to pick up their prize within two weeks. It is important
+            that you reply to that notification email and organise collection of your prize. A failure
+            to respond within two weeks might result in your forfeiting the prize, and it being
+            offered to the next person by random draw from the remaining tickets. A complete list of
+            winners will be published to the Zonta Club of Melbourne's South East website.
+        </p>
         <p><strong>Prize List</strong>: (with approximate values in descending order)</p>
         <ul>
             <li>Two Gold Class Tickets - Village Cinemas ($100)</li>

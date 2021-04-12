@@ -457,11 +457,15 @@ const ZontaMSE40 = () => {
               Nepean Highway, Frankston, Victoria 3199.
             </li>
             <li className="pb-4">
-              <strong>Winner Notification and Publication Method:</strong>{" "}
-              winners will be notified at the time of draw or by email if not
-              available to collect the prize on the day. A complete list of
-              winners will be published to the Zonta Club of Melbourne's South
-              East website.
+              <strong>Winner Notification and Publication Method</strong>:
+              winners will be notified by email and must make arrangements to
+              pick up their prize within two weeks. It is important that you
+              reply to that notification email and organise collection of your
+              prize. A failure to respond within two weeks might result in your
+              forfeiting the prize, and it being offered to the next person by
+              random draw from the remaining tickets. A complete list of winners
+              will be published to the Zonta Club of Melbourne's South East
+              website.
             </li>
           </ul>
         </div>
