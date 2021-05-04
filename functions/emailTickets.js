@@ -11,20 +11,26 @@ exports.handler = async function (event, context, callback) {
       const customer = await stripe.customers.retrieve(checkout.customer)
       console.log(customer)
 
-      //   const lineItems = await stripe.checkout.sessions.listLineItems(
-      //     checkout.id
-      //   )
-      const items = (
-        await stripe.checkout.sessions.listLineItems(checkout.id)
-      ).data.map(i => {
-        return i.description
-      })
+      const lineItems = await stripe.checkout.sessions.listLineItems(
+        checkout.id,
+        {
+          expand: ["data.price.product"],
+        }
+      )
+
+      const description = lineItems.data[0].description
+
+      // Assumption there's only one item, and in there we have price.product.metadata.ticket_count
+      // if they bought a block, or price.product.metadata.min_count if they bought more individually
+      const entries = lineItems.data[0].price.product.metadata.ticket_count
+        ? lineItems.data[0].price.product.metadata.ticket_count
+        : lineItems.data[0].quantity
 
       const emailAddress = customer.email
       const emailText = `
-        <p>Thanks for buying a ${items[0]}!</p>
-        <p>If you're selected as a winner, you will be notified by email.</p>
-        <p><strong>You purchased</strong>: ${items[0]}</p>
+        <p><big><strong>Thanks for buying a ${description}!</strong></big></p>
+        <p>Your name will go into the draw ${entries} times, and you will be notified by email if you're selected as a winner.</p>
+        <p><strong>You purchased</strong>: ${description}</p>
         <p><strong>Your email address</strong>: ${emailAddress}</p>
         <p><strong>Raffle Beneficiary</strong>: Zonta Club of Melbourne's South East</p>
         <p>
