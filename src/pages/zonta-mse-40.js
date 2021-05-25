@@ -9,13 +9,58 @@ const metaTitle = `Zonta Club of Melbourne's South East`
 const title = `Zonta Club of Melbourne's South East 40th Birthday Raffle`
 const description = `Proceeds from the raffle will support community-based Mental Health First Aid training`
 
-const Banner = () => (
+const Banner = ({
+  ticketholderName,
+  setTicketholderName,
+  ticketholderEmail,
+  setTicketholderEmail,
+}) => (
   <>
     <div className="bg-gray-200">
       <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="my-5">
-            <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-16 md:gap-y-10">
+            <dl className="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-16 lg:gap-y-10">
+              <div className="relative">
+                <dt>
+                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
+                    Who are they for?
+                  </p>
+                </dt>
+                <dd className="mt-2 ml-16 text-base text-gray-700">
+                  Who are the raffle tickets form, and where shall we send them?
+                  <input
+                    className="block w-full my-4 border border-secondary text-center"
+                    type="text"
+                    value={ticketholderName}
+                    onChange={ev => setTicketholderName(ev.target.value)}
+                    placeholder="Jane Smith"
+                  />
+                  <input
+                    className="block w-full my-4 border border-secondary text-center"
+                    type="text"
+                    value={ticketholderEmail}
+                    onChange={ev => setTicketholderEmail(ev.target.value)}
+                    placeholder="jane.smith@exmaple.com"
+                  />
+                </dd>
+              </div>
               <div className="relative">
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
@@ -215,6 +260,9 @@ const ZontaMSE40 = () => {
   const [customTicketCount, setCustomTicketCount] = useState(null)
   const [customProductError, setCustomProductError] = useState(null)
 
+  const [ticketholderName, setTicketholderName] = useState("")
+  const [ticketholderEmail, setTicketholderEmail] = useState("")
+
   useEffect(() => {
     const starts = new Date("2021/04/03 09:00")
     const ends = new Date("2021/06/20 15:00")
@@ -263,6 +311,18 @@ const ZontaMSE40 = () => {
   }
 
   const buyTickets = (priceId, qty = 1) => {
+    if (ticketholderName === "") {
+      alert("Please enter a name for the ticketholder in the first section")
+      return
+    }
+
+    if (ticketholderEmail === "") {
+      alert(
+        "Please enter an email address for ticket delivery in the first section"
+      )
+      return
+    }
+
     fetch(`${process.env.GATSBY_NETLIFY_API}/buyTickets`, {
       method: "post",
       headers: {
@@ -271,6 +331,8 @@ const ZontaMSE40 = () => {
       body: JSON.stringify({
         priceId,
         qty,
+        ticketholderName,
+        ticketholderEmail,
       }),
     })
       .then(res => res.json())
@@ -312,7 +374,12 @@ const ZontaMSE40 = () => {
             </div>
           </div>
           <div className="border-t border-gray-200">
-            <Banner />
+            <Banner
+              ticketholderName={ticketholderName}
+              setTicketholderName={setTicketholderName}
+              ticketholderEmail={ticketholderEmail}
+              setTicketholderEmail={setTicketholderEmail}
+            />
 
             {!isLoaded && (
               <Alert

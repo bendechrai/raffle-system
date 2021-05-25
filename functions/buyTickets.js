@@ -6,6 +6,8 @@ exports.handler = async function (event, context, callback) {
   const parsedBody = JSON.parse(event.body)
   const priceId = parsedBody.priceId
   const qty = parseInt(parsedBody.qty)
+  const ticketholderName = parsedBody.ticketholderName
+  const ticketholderEmail = parsedBody.ticketholderEmail
 
   const price = await stripe.prices.retrieve(priceId, {
     expand: ["product"],
@@ -31,6 +33,10 @@ exports.handler = async function (event, context, callback) {
     payment_method_types: ["card"],
     line_items: [{ price: priceId, quantity: qty }],
     mode: "payment",
+    metadata: {
+      ticketholderName,
+      ticketholderEmail,
+    },
   })
 
   callback(null, {
