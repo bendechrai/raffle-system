@@ -9,7 +9,6 @@ exports.handler = async function (event, context, callback) {
       const stripe = require("stripe")(process.env.STRIPE_SK)
 
       const customer = await stripe.customers.retrieve(checkout.customer)
-      console.log(customer)
 
       const lineItems = await stripe.checkout.sessions.listLineItems(
         checkout.id,
@@ -26,8 +25,21 @@ exports.handler = async function (event, context, callback) {
         ? lineItems.data[0].price.product.metadata.ticket_count
         : lineItems.data[0].quantity
 
-      const emailAddress = customer.email
-      const emailText = `
+      const name = checkout.metadata.ticketholderName
+        ? checkout.metadata.ticketholderName
+        : null
+
+      const emailAddress = checkout.metadata.ticketholderEmail
+        ? checkout.metadata.ticketholderEmail
+        : customer.email
+
+      let emailText = ""
+
+      if (name) {
+        emailText += `<p>Hi ${name},</p>`
+      }
+
+      emailText += `
         <p><big><strong>Thanks for buying a ${description}!</strong></big></p>
         <p>Your name will go into the draw ${entries} times, and you will be notified by email if you're selected as a winner.</p>
         <p><strong>You purchased</strong>: ${description}</p>
