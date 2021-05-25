@@ -40,11 +40,11 @@ const Banner = ({
                     </svg>
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
-                    Who are they for?
+                    Whom are they for?
                   </p>
                 </dt>
                 <dd className="mt-2 ml-16 text-base text-gray-700">
-                  Who are the raffle tickets form, and where shall we send them?
+                  Whom are the raffle tickets for, and where shall we send them?
                   <input
                     className="block w-full my-4 border border-secondary text-center"
                     type="text"
