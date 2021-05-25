@@ -71,8 +71,9 @@ const ZontaMSE40Success = () => {
             />
             <p className="px-6 py-2">
               Thank you for your purchase, and good luck with the raffle! You
-              will shortly receive two emails: your raffle tickets and your
-              purchase receipt.
+              will shortly receive your raffle tickets to the email address
+              provided when you selected the number of tickets to buy, and your
+              purchase receipt to the email address provided at time of payment.
             </p>
             <p className="px-6 py-2">
               <strong>
