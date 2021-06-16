@@ -50,7 +50,7 @@ exports.handler = async function (event, context, callback) {
             10 raffle tickets for $15.00, 11 or more raffle tickets for $1.50 each.
         </p>
         <p>
-            <strong>Time and Location of Draw</strong>: shortly after 3pm on the 20th June, 2021
+            <strong>Time and Location of Draw</strong>: shortly after 3pm on the 8th August 2021
             at the Frankston International Motel, 383-389 Nepean Highway, Frankston, Victoria 3199.
         </p>
         <p>

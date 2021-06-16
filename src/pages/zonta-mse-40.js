@@ -265,7 +265,7 @@ const ZontaMSE40 = () => {
 
   useEffect(() => {
     const starts = new Date("2021/04/03 09:00")
-    const ends = new Date("2021/06/20 15:00")
+    const ends = new Date("2021/08/08 15:00")
     const now = new Date()
     const startsIn = starts.getTime() - now.getTime()
     const endsIn = ends.getTime() - now.getTime()
@@ -422,8 +422,8 @@ const ZontaMSE40 = () => {
             Gambling and Liquor Regulation (Organisational Number 61694).
           </p>
           <p className="my-4">
-            Tickets for this raffle will be available from 9am on 5th April,
-            2021, and will cease to be available at 3pm on 20th June, 2021 or
+            Tickets for this raffle will be available from 9am on 5th April
+            2021, and will cease to be available at 3pm on 8th August 2021 or
             when sold out. The total prize pool is valued at $954.50, and there
             are a maximum of $5727.00 worth of tickets available. The raffle and
             associated activities will be conducted under the laws of Victoria,
@@ -516,7 +516,7 @@ const ZontaMSE40 = () => {
             </li>
             <li className="pb-4">
               <strong>Time and Location of Draw:</strong> shortly after 3pm on
-              the 20th June, 2021 at the Frankston International Motel, 383-389
+              the 8th August 2021 at the Frankston International Motel, 383-389
               Nepean Highway, Frankston, Victoria 3199.
             </li>
             <li className="pb-4">

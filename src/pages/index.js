@@ -85,7 +85,7 @@ const IndexPage = () => (
                         Active
                       </span>
                       <div className="text-sm text-gray-500">
-                        9am, 5th April, 2021 - 3pm, 13th June, 2021 (AEST)
+                        9am, 5th April 2021 - 3pm, 8th August 2021 (AEST)
                       </div>
                     </Link>
                   </td>
