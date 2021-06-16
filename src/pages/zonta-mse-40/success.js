@@ -83,7 +83,7 @@ const ZontaMSE40Success = () => {
             </p>
             <p className="px-6 py-2">
               The draw will take place shortly after ticket sales close at 3pm
-              AEST on 20th June, 2021. Prizes will be picked in order of value,
+              AEST on 8th August 2021. Prizes will be picked in order of value,
               highest first, and winners who are not present during the draw
               will be contacted by email.
             </p>
