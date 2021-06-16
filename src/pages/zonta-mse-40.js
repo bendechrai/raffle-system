@@ -265,7 +265,7 @@ const ZontaMSE40 = () => {
 
   useEffect(() => {
     const starts = new Date("2021/04/03 09:00")
-    const ends = new Date("2021/06/20 15:00")
+    const ends = new Date("2021/08/08 15:00")
     const now = new Date()
     const startsIn = starts.getTime() - now.getTime()
     const endsIn = ends.getTime() - now.getTime()
