@@ -1,6 +1,6 @@
 exports.handler = async function (event, context, callback) {
   if (process.env.NODE_ENV !== "production") require("dotenv").config()
-  const stripe = require("stripe")(process.env.STRIPE_SK)
+  const stripe = require("stripe")(process.env.STRIPE_LIVE_SK)
 
   let lines = [["Name", "Email", "Description", "Entries"]]
 
